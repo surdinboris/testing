@@ -1,5 +1,4 @@
 import os
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 from faker import Factory
 from PIL import Image
 from random import randint
@@ -18,7 +17,7 @@ def lastn(fpath): #returns 'oldest' file to continue generating
     return max(fnlist)
 
 def imgen(y):
-    
+
     randval = randint(100, 1000)
     im_out=Image.new('RGB',(randval,randval),color=getatt('hex_color'))
     im_out.save(os.path.join(os.getcwd(),'output','out%000d.jpg' % y))
